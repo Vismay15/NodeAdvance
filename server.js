@@ -22,20 +22,12 @@ app.use((req,res,next)=>{
 
 app.get('/',(req,res)=>{
     // res.send('<h1>Hello Express</h1>');
-    res.send({
-        name: 'Vismay',
-        LatName: 'Patel',
-        age:'23'
-    });
-});
-
-app.get('/home',(req,res)=>{
-    // res.send('<h1>Hello Express</h1>');
-    res.render('about.hbs',{
+    res.render('home.hbs',{
         pageTitle: 'Vismay Patel',
         year: new Date().getFullYear()
     });
 });
+
 
 app.get('/about',(req,res)=>{
     // res.send('<h1>Hello Express</h1>');
@@ -43,6 +35,10 @@ app.get('/about',(req,res)=>{
         pageTitle: 'Vismay Patel',
         year: new Date().getFullYear()
     });
+});
+
+app.get('/resume',(req,res)=>{
+    res.render('resume.hbs')
 });
 
 app.listen(port,()=>{
